@@ -1,0 +1,30 @@
+.div-principal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 20px;
+}
+
+.estado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 2px;
+  padding: 5px;
+  width: 250px;
+}
+
+.nome {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.capital {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.bandeira {
+  width: 200px;
+}

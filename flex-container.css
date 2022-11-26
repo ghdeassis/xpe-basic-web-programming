@@ -1,0 +1,17 @@
+.main-div {
+  height: 700px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.box {
+  display: inline-block;
+  background-color: blue;
+  color: white;
+  width: 80px;
+  height: 80px;
+  border: 3px solid black;
+}

@@ -1,0 +1,78 @@
+<html>
+
+<head>
+  <script>
+    const a = 50;
+    const b = 50;
+
+    //> < >= <= == === !==
+
+    if (a > b) {
+      console.log("a maior do que b");
+    } else if (a < b) {
+      console.log("a é menor do que b");
+    } else {
+      console.log("a é igual a b");
+    }
+
+    console.log("Sempre executar")
+
+    const c = 40;
+    const d = 40;
+    if (c >= d) {
+      console.log("c é maior ou igual a d");
+    }
+    if (c <= d) {
+      console.log("c é menor ou igual a d");
+    }
+
+    const f = 11;
+    const g = 11;
+    if (f === g) {
+      console.log("f é igual a g");
+      let testeEscopo = "teste de escopo";
+    }
+    if (f !== g) {
+      console.log("f é diferente de g");
+    }
+    //console.log(testeEscopo);
+
+    const numero = 7;
+
+    if (numero === 1) {
+      console.log("Um");
+    } else if (numero === 2) {
+      console.log("Dois");
+    } else if (numero === 3) {
+      console.log("Três");
+    } else if (numero === 4) {
+      console.log("Quatro");
+    } else if (numero === 5) {
+      console.log("Cinco");
+    } else {
+      console.log("Entrada inválida.");
+    }
+
+    switch (numero) {
+      case 1:
+        console.log("Um");
+        break;
+      case 2:
+        console.log("Dois");
+        break;
+      case 3:
+        console.log("Três");
+        break;
+      case 4:
+        console.log("Quatro");
+        break;
+      case 5:
+        console.log("Cinco");
+        break;
+      default:
+        console.log("Entrada inválida.");
+    }
+  </script>
+</head>
+
+</html>

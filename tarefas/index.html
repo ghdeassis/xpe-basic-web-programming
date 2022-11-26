@@ -1,0 +1,57 @@
+<html>
+
+<head>
+  <script>
+    function salvar() {
+      const tarefa = document.getElementById("tarefa").value;
+      if (tarefa) {
+        let tarefas = JSON.parse(localStorage.getItem("tarefas"));
+        if (!tarefas) {
+          tarefas = [];
+        }
+        tarefas.push(tarefa);
+        localStorage.setItem("tarefas", JSON.stringify(tarefas));
+        document.getElementById("tarefa").value = "";
+        atualizar();
+      } else {
+        alert("Tarefa não pode ser vazia.")
+      }
+    }
+    function remover(i) {
+      const tarefas = JSON.parse(localStorage.getItem("tarefas"));
+      tarefas.splice(i, 1);
+      localStorage.setItem("tarefas", JSON.stringify(tarefas));
+      atualizar();
+    }
+    function atualizar() {
+      const div = document.getElementById("lista-tarefas");
+      div.innerHTML = "";
+      const tarefas = JSON.parse(localStorage.getItem("tarefas"));
+      if (tarefas) {
+        for (let i = 0; i < tarefas.length; i++) {
+          const divTarefa = document.createElement("div");
+          divTarefa.appendChild(document.createTextNode(tarefas[i]));
+
+          const btnExcluir = document.createElement("button");
+          btnExcluir.appendChild(document.createTextNode("X"));
+          btnExcluir.onclick = function () {
+            remover(i);
+          }
+          divTarefa.appendChild(btnExcluir);
+
+          div.appendChild(divTarefa);
+        }
+      }
+    }
+  </script>
+</head>
+
+<body onload="atualizar()">
+  <h1>Lista de Tarefas</h1>
+  <label for="tarefa">Tarefa</label>
+  <input id="tarefa">
+  <button onclick="salvar()">Salvar</button>
+  <div id="lista-tarefas"></div>
+</body>
+
+</html>
